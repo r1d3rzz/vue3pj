@@ -1,6 +1,9 @@
 <template>
   <div class="backdrop">
-    <div class="modal"><p>Modal Content</p></div>
+    <div class="modal">
+      <h1>This is Modal</h1>
+      <p>Modal Content</p>
+    </div>
   </div>
 </template>
 
@@ -8,7 +11,7 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
 .backdrop {
   position: fixed;
   top: 0;
@@ -25,5 +28,8 @@ export default {};
   padding: 10px;
   border-radius: 5px;
   text-align: center;
+}
+p {
+  font-style: normal;
 }
 </style>
