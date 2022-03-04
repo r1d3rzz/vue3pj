@@ -1,6 +1,14 @@
 <template>
   <h1>Hello World</h1>
-  <BackModal :header="header" :content="content" :theme="theme" />
+  <div v-if="showModal">
+    <BackModal
+      :header="header"
+      content="Welcome Users"
+      :theme="theme"
+      @closeModal="showModal = false"
+    />
+  </div>
+  <button @click="showModal = true">open modal</button>
 </template>
 
 <script>
@@ -12,8 +20,8 @@ export default {
   data() {
     return {
       header: "Login Successful",
-      content: "Welcome User",
       theme: "success",
+      showModal: false,
     };
   },
 };
