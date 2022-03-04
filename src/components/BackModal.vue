@@ -1,5 +1,5 @@
 <template>
-  <teleport to=".modal" class="backdrop" @click.self="closeModal">
+  <div class="backdrop" @click.self="closeModal">
     <div
       class="modal"
       :class="{ success: theme === 'success', delete: theme === 'danger' }"
@@ -7,7 +7,7 @@
       <slot> Default </slot>
       <slot name="links" />
     </div>
-  </teleport>
+  </div>
 </template>
 
 <script>
