@@ -1,14 +1,19 @@
 <template>
   <div class="backdrop">
-    <div class="modal">
-      <h1>This is Modal</h1>
-      <p>Modal Content</p>
+    <div
+      class="modal"
+      :class="{ success: theme === 'success', delete: theme === 'danger' }"
+    >
+      <h1>{{ header }}</h1>
+      <p>{{ content }}</p>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["header", "content", "theme"],
+};
 </script>
 
 <style scoped>
@@ -25,11 +30,18 @@ export default {};
   margin: 100px auto;
   background: white;
   height: 100px;
-  padding: 10px;
+  padding: 20px;
   border-radius: 5px;
-  text-align: center;
 }
 p {
   font-style: normal;
+}
+.success {
+  background-color: green;
+  color: white;
+}
+.delete {
+  background-color: red;
+  color: white;
 }
 </style>
