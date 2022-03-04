@@ -1,12 +1,13 @@
 <template>
   <h1>Hello World</h1>
   <div v-if="showModal">
-    <BackModal
-      :header="header"
-      content="Welcome Users"
-      :theme="theme"
-      @closeModal="showModal = false"
-    />
+    <BackModal :theme="theme" @closeModal="showModal = false">
+      <h1>Welcome</h1>
+      <p>welcome user myint thway khine</p>
+      <template v-slot:links>
+        <a href="">Nothing</a>
+      </template>
+    </BackModal>
   </div>
   <button @click="showModal = true">open modal</button>
 </template>
@@ -28,7 +29,4 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  color: blue;
-}
 </style>

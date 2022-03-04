@@ -1,13 +1,13 @@
 <template>
-  <div class="backdrop" @click.self="closeModal">
+  <teleport to=".modal" class="backdrop" @click.self="closeModal">
     <div
       class="modal"
       :class="{ success: theme === 'success', delete: theme === 'danger' }"
     >
-      <h1>{{ header }}</h1>
-      <p>{{ content }}</p>
+      <slot> Default </slot>
+      <slot name="links" />
     </div>
-  </div>
+  </teleport>
 </template>
 
 <script>
@@ -34,7 +34,6 @@ export default {
   width: 400px;
   margin: 100px auto;
   background: white;
-  height: 100px;
   padding: 20px;
   border-radius: 5px;
 }
